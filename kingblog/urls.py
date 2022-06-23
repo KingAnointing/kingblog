@@ -6,5 +6,6 @@ urlpatterns = [
     path("whoami/",AboutView.as_view() ,name='whoami'),
     path("blog/<int:pk>", PostDetailView.as_view(), name="post_detail"),
     path("blog/new", CreatePostView.as_view(), name="create_blog"),
-    path("post/<int:id>/edit/", PostUpdateView.as_view(), name="update_blog"),
+    path("post/<int:id>/edit/", PostUpdateView.as_view(), name="update_blog")
+    path("post/<int:id>/delete/", PostDeleteView.as_view(), name="post_delete")
 ]

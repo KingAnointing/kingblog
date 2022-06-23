@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView
+from django.urls import reverse_lazy
+from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView,DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils import timezone
 
@@ -41,3 +42,7 @@ class PostUpdateView(UpdateView):
     login_url = '/login/'
     redirect_field_name = '/blog/post_detail'
     form_class = PostForm
+
+class PostDeleteView(DeleteView,LoginRequiredMixin):
+    model = Post
+    success_url = reverse_lazy('post_list')
