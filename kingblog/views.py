@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView,ListView
+from django.views.generic import *
 from django.utils import timezone
 
 from kingblog.models import Post, Comments
@@ -17,3 +17,6 @@ class PostListView(ListView):
     def get_queryset(self):
         return Post.objects.filter(published_date__lte=timezone.now().orderby("-published_date"))
     
+class PostDetailView(DetailView):
+    model = Post
+    template_name=''
