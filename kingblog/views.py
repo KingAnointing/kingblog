@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -57,3 +57,17 @@ class DraftListView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         return Post.objects.filter(published_date__isnull=True).order_by('created_date')
+
+
+def addCommentToPost(request,pk): 
+    post = get_object_or_404(Post,pk=pk)
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save()
+            comment.post == post
+            comment.save()
+            return redirect('post_detail',pk=post.pk)
+    else:
+        form = CommentForm()
+    return render(request,'blog/comment_form.html',{'form':form})
