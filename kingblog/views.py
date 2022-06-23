@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView,DeleteView
+from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils import timezone
 
@@ -20,7 +20,7 @@ class PostListView(ListView):
     template_name = ''
 
     def get_queryset(self):
-        return Post.objects.filter(published_date__lte=timezone.now().orderby("-published_date"))
+        return Post.objects.filter(published_date__lte=timezone.now()).orderby("-published_date")
 
 
 class PostDetailView(DetailView):
@@ -32,7 +32,7 @@ class CreatePostView(CreateView, LoginRequiredMixin):
     model = Post
     template_name = ".html"
     login_url = '/login/'
-    redirect_field_name = '/blog/post_detail/'
+    redirect_field_name = '/blog/post_detail.html/'
     form_class = PostForm
 
 
@@ -40,9 +40,20 @@ class PostUpdateView(UpdateView):
     model = Post
     template_name = ".html"
     login_url = '/login/'
-    redirect_field_name = '/blog/post_detail'
+    redirect_field_name = '/blog/post_detail.html'
     form_class = PostForm
 
-class PostDeleteView(DeleteView,LoginRequiredMixin):
+
+class PostDeleteView(DeleteView, LoginRequiredMixin):
     model = Post
     success_url = reverse_lazy('post_list')
+
+
+class DraftListView(LoginRequiredMixin, ListView):
+    login_url = '/login/'
+    redirect_field_name = 'blog/post_list.html'
+    model = Post
+    template_name = ".html"
+
+    def get_queryset(self):
+        return Post.objects.filter(published_date__isnull=True).order_by('created_date')
