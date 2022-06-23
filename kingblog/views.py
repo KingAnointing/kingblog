@@ -1,8 +1,10 @@
 from django.shortcuts import render
-from django.views.generic import *
+from django.views.generic import TemplateView,ListView,DetailView,CreateView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils import timezone
 
 from kingblog.models import Post, Comments
+from .forms import *
 
 # Create your views here.
 
@@ -20,3 +22,10 @@ class PostListView(ListView):
 class PostDetailView(DetailView):
     model = Post
     template_name=''
+
+class CreatePostView(CreateView,LoginRequiredMixin):
+    model = Post
+    template_name = ".html"
+    login_url = '/login/'
+    redirect_field_name = '/blog/post_detail/'
+    form_class = PostForm
