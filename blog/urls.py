@@ -20,6 +20,6 @@ from django.contrib.auth import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",include("kingblog.urls")),
-    path("account/login/", views.LoginView.as_view() , name="login"),
+    path("account/login/", views.LoginView.as_view() , name="login",kwargs={'next_page': '/postadmin/'}),
     path("account/logout/", views.LogoutView.as_view(), name="logout",kwargs={'next_page': '/'}),
 ]

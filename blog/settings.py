@@ -10,11 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-# TEMPLATE_DIR = 'blog/template/blog'
+# TEMPLATE_DIR = os.path.join(BASE_DIR,'blog/templates/blog')
+TEMPLATE_DIR = BASE_DIR / 'blog/templated/blog'
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,7 +27,7 @@ SECRET_KEY = 'django-insecure-d0*i!adra9k3a172s(3e^o0n13+wd3i+ir)5f5*s8b*sh!%bx+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+  
 ALLOWED_HOSTS = []
 
 
@@ -56,7 +58,7 @@ ROOT_URLCONF = 'blog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATE_DIR,],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,7 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR / 'static'
+STATIC_ROOT = BASE_DIR / 'static/css/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
