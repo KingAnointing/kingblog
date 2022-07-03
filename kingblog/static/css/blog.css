@@ -1,0 +1,47 @@
+.centerstage {
+  margin: auto;
+}
+.header {
+  background-color: rgb(124, 124, 119);
+  /* color: rgb(226, 43, 226); */
+  color: rgb(29, 22, 29);
+  font-weight: bold;
+  font-family: 'Lucida Console', 'Courier New', monospace
+  /* margin-left: 23.5%; */
+}
+.sticky{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#about{
+    background-color: rgb(32, 46, 90);
+    color: rgb(185, 162, 162);
+}
+.comment,.about{
+    color:rgb(153, 143, 122) ;
+    font-family:cursive,monospace
+}
+a,#name{
+    /* Audiowide',sans-serif */
+    font-family: 'Brush Script MT', cursive, monospace;
+    color: rgb(151, 151, 109);
+    
+}
+.intro{
+    font-family: 'Courier New', Courier, monospace;
+}
+.date{
+    color: rgb(73, 110, 110);
+}
+.content{
+    font-family: cursive,monospace;
+    color: rgb(87, 57, 57);
+}
+.footer{
+    /* position:absolute; */
+    background-color: rgb(124, 124, 119);
+    font-family: cursive, monospace;
+
+}

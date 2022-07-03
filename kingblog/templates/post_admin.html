@@ -1,0 +1,22 @@
+{% extends "kingblog/layout.html" %}
+{% block body %}
+    {% if user.is_authenticated %}
+        <li>
+            <a href="{% url 'create_post'%}">New Post</a>
+        </li>
+         <li>
+            <a href="{% url 'post_draft_list'%}">Draft</a>
+        </li>
+        <li>
+            <a href="{% url 'logout' %}">Log out</a>
+        </li>
+
+        <li>
+            <a> Welcome: {{ user.username}}</a>
+        </li>
+        {%else%}
+        <li>
+            <a href="{% url 'login' %}">Login</a>
+        </li>
+    {% endif %}
+{% endblock body %}

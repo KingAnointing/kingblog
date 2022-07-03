@@ -1,0 +1,22 @@
+{% extends "kingblog/layout.html" %}
+{% block body %}
+{% comment %} <center> {% endcomment %}
+<div class="container">
+{% for post in post_list %}
+
+    <div class="post">
+        <h4>
+            <a href="{% url 'post_detail' slug=post.slug %}">{{post.title}}</a>
+        </h4>
+        <div class="date">
+            <p>published on : {{post.published_date|date:"D M Y"}}</p>
+        </div>
+        <a href="{% url 'post_detail' slug=post.slug %}">comment: {{ post.approved_comments.count }}</a>
+        <br>
+        <br>
+    </div>
+
+{% endfor %}
+</div>
+{% comment %} </center> {% endcomment %}
+{% endblock%} 
