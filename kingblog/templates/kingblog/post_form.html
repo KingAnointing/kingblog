@@ -5,8 +5,9 @@
     <form class="post-form" method="POST">
         {%csrf_token %}
         {{form.as_p}}
+        {{form.media}}
         <button type="submit" class="save btn btn-default">Save</button>
     </form>
 
-    <script> var editor = new MediumEditor('.editable');</script>
+    {% comment %} <script> var editor = new MediumEditor('.editable');</script> {% endcomment %}
 {% endblock body %}

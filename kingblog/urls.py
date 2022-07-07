@@ -1,4 +1,3 @@
-from django import views
 from .views import *
 from django.urls import path
 
@@ -18,5 +17,5 @@ urlpatterns = [
     path("comment/<int:pk>/approve/", commentApprove, name="approve_comment"),
     path("comment/<int:pk>/remove/", commentRemove, name="remove_comment"),
     path("post/<int:pk>/publish/", postPublish, name="publish_post"),
-    path("KingAnointing/resume-pdf/", pdfView, name="pdf_view")
+    path("KingAnointing/resume-pdf/", pdfView, name="pdf_view"),
 ]
