@@ -1,50 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,500;0,700;1,300;1,500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+  background-color: #000;
+  /* #25262A */
+  color: #fff;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: #64f4ac;
+}
+
+a:hover {
+  color: #3ecf8e;
+}
+
+.hire-me {
+  background-color: #2d2e32;
+  /* #0B212D */
+}
+
+.icons {
+  color: #64f4ac;
+}
+
+.icons:hover {
+  color: #3ecf8e;
+}
+
+.last-name {
+  color: #64f4ac;
+}
+
+.last-name:hover {
+  color: #fff;
+}
+
+.first-name {
+  color: #fff;
+}
+
+.first-name:hover {
+  color: #64f4ac;
+}
+
+/* Initial */
+
 .centerstage {
   margin: auto;
 }
-.header {
-  background-color: rgb(124, 124, 119);
-  /* color: rgb(226, 43, 226); */
-  color: rgb(29, 22, 29);
-  font-weight: bold;
-  font-family: 'Lucida Console', 'Courier New', monospace
-  /* margin-left: 23.5%; */
-}
-.sticky{
-    position: fixed;
-    top: 0;
-    width: 100%;
+
+/* .header { */
+/* background-color: rgb(124, 124, 119); */
+/* color: rgb(226, 43, 226); */
+/* color: rgb(29, 22, 29); */
+/* font-weight: bold; */
+/* padding: 20px; */
+/* margin-left: 23.5%; */
+/* } */
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 .sticky + .content {
-    padding-top: 102px;
+  padding-top: 102px;
 }
 
-#about{
+/* #about{
     background-color: rgb(32, 46, 90);
     color: rgb(185, 162, 162);
-}
-.comment,.about{
+} */
+/* .comment,.about{
     color:rgb(153, 143, 122) ;
     font-family:cursive,monospace
-}
-a,#name{
-    /* Audiowide',sans-serif */
+} */
+/* a,#name{
+    Audiowide',sans-serif
     font-family: 'Brush Script MT', cursive, monospace;
     color: rgb(151, 151, 109);
     
-}
-.intro{
+} */
+/* .intro{
     font-family: 'Courier New', Courier, monospace;
-}
-.date{
+} */
+/* .date{
     color: rgb(73, 110, 110);
-}
-.content{
+} */
+/* .content{
     font-family: cursive,monospace;
     color: rgb(87, 57, 57);
-}
-.footer{
-    /* position:absolute; */
+} */
+
+/* .footer{
+    position:absolute;
     background-color: rgb(124, 124, 119);
     font-family: cursive, monospace;
 
-}
+} */
